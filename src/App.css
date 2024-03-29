@@ -1,0 +1,17 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+.signup-info-card .signup-card button {
+  box-shadow: 0 0.6rem 0 rgba(0, 0, 0, 0.2);
+}
