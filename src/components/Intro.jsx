@@ -20,6 +20,18 @@ export default function Intro() {
     let emailRegex =
       /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
+    if (emailInput === "") {
+      setEmailError("Email cannot be empty");
+      setInvalidEmailError("");
+    } else if (!emailInput.match(emailRegex)) {
+      setInvalidEmailError("Looks like this is not an email");
+      setEmailError("");
+      setEmailInput("")
+    } else {
+      setEmailError(""); // Reset error state
+      setInvalidEmailError(""); // Reset error state
+    }
+
     if (firstNameInput === "") {
       setFirstNameError("First Name cannot be empty");
     } else {
@@ -32,17 +44,6 @@ export default function Intro() {
       setLastNameError(""); // reset error
     }
     
-    if (emailInput === "") {
-      setEmailError("Email cannot be empty");
-      setInvalidEmailError("");
-    } else if (!emailInput.match(emailRegex)) {
-      setInvalidEmailError("Looks like this is not an email");
-      setEmailError("");
-      setEmailInput("")
-    } else {
-      setEmailError(""); // Reset error state
-      setInvalidEmailError(""); // Reset error state
-    }
     
     if (passwordInput === "") {
       setPasswordError("Password cannot be empty");
